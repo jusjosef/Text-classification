@@ -1,0 +1,17 @@
+Text classification with very high accuracy rates are possible (north of 95%) but to acheive those you need to do a lot of text preprocessing before you run your machine learning models.
+
+The key challenge with text processing is to process the text in a suffecient manner that the algorithm of choice is able to detect enough structure within the text decipher a neat signal.
+
+The following helps
+
+Word removal-experiment with word removals both in high frequency and low frequency space
+Taxonomy- Ordered heirarchial taxonomy can help you reduce entropy in content. Similar to what decision trees accomplish. This is SUPER unappreciated in most text analytics literature
+Lemmatization. _ it sometimes helps improve structure of text
+Sampling - Are your classes balanced? if not resample, create synthetic data to populate low frequency classes
+ensemble/boosting/bagging methods- Have you tried meta algos to improve your performance?
+Data Quality check- Good data is like good food. Have you checked if you have any useless data? pruning data set helps improve structure a lot!
+Hyper Parameter tuning- Did you exhaustively search the subspaces to fine tune the model. Most models show upto 10% improvement by just hyperparameter tuning.
+Word Gram conversion- you can improve feature set by converting important bigrams and trigrams into unigrams "food processing" can be changed to "food_processing"
+Data preparation- Count vectors, tf-idf, word2vec .. et al.. Naive bayes seems to work better Count vectors,
+Sample length- This is a quirk i noticed in text mining. if you are classifying sentences ranging from few words to lets say a paragraph. With more additional words algos like naive bayes dont work well due lack of convergence arising from positive hits they get from all words for more that one class to put it naively (pun intended :P)
+Last point I can think is instead of getting class assignment get class probabilities and use that itself a feature in your ensembles. It seems to work in a variety of cases.
